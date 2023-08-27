@@ -3,10 +3,9 @@ import pandas as pd
 import pickle
 
 st.title('Movie Recommender System')
-
 def recommend(movie):
     movie_index = movies[movies['title_x']==movie].index[0]
-    #finding cosine distance of the given movie from other moives
+    #finding cosine distance of the given movie from other movies
     distances = similarity[movie_index]
     #sorted movie list according to the similarity
     movie_list = sorted(list(enumerate(distances)),reverse=True,key = lambda x:x[1])[1:6]
